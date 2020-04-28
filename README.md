@@ -9,8 +9,12 @@ Implementation:
 How To:
 - SaveManager.Instance.Load(); // Load data from save path.
 - SaveManager.Instance.Save(save); // You can use this line for saving
+
+
 Save Example:
 
  var save = SaveManager.Instance.Load();
+ 
  save.CurrentLevel++;
+ 
  SaveManager.Instance.Save(save);
