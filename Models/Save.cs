@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Save
+namespace BasicSaveSystem
 {
-    public int CurrentLevel = 1;
-    public int RandomLoadedLevel = 1;
-    public bool IsSoundOff;
-    public bool IsMusicOff;
+    [System.Serializable]
+    public class Save
+    {
+        public int CurrentLevel = 1;
+        public int RandomLoadedLevel = 1;
+        public bool IsSoundOff;
+        public bool IsMusicOff;
+    }
 }

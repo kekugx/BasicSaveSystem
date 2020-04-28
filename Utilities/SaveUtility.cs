@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class SaveUtility
+namespace BasicGameSystem
 {
-    public static void SaveGame(this Save save, string path)
+    public static class SaveUtility
     {
-        var data = JsonUtility.ToJson(save);
-        PlayerPrefs.SetString(path, data);
-    }
-
-    public static Save LoadGame(string path)
-    {
-        var data = new Save();
-        if (PlayerPrefs.HasKey(path) == false)
+        public static void SaveGame(this Save save, string path)
         {
-            data.SaveGame(path);
+            var data = JsonUtility.ToJson(save);
+            PlayerPrefs.SetString(path, data);
         }
-        { 
-            data  = JsonUtility.FromJson<Save>(PlayerPrefs.GetString(path));
+
+        public static Save LoadGame(string path)
+        {
+            var data = new Save();
+            if (PlayerPrefs.HasKey(path) == false)
+            {
+                data.SaveGame(path);
+            }
+            {
+                data = JsonUtility.FromJson<Save>(PlayerPrefs.GetString(path));
+            }
+            return data;
         }
-        return data;
     }
 }
