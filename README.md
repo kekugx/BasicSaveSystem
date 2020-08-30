@@ -17,4 +17,5 @@ Save Example:
  
  save.CurrentLevel++;
  
- SaveManager.Instance.Save(save);
+ SaveManager.Instance.Save(save); //Save method 1
+ save.Save(); //Save method 2

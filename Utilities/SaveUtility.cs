@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BasicGameSystem
+namespace BasicSaveSystem
 {
     public static class SaveUtility
     {
@@ -10,6 +10,11 @@ namespace BasicGameSystem
         {
             var data = JsonUtility.ToJson(save);
             PlayerPrefs.SetString(path, data);
+        }
+
+        public static void Save(this Save save)
+        {
+            SaveManager.Instance.Save(save);
         }
 
         public static Save LoadGame(string path)
